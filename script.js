@@ -5,7 +5,7 @@ const pages = [
 ]
 
 const answers = [
-    "a",
+    "i think i like you",
     "b",
     "c"
 ]
