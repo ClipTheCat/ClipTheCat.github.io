@@ -3,6 +3,7 @@
 body {
     background-color: #000000;
     color: #ffffff;
+    font-weight: 100;
 }
 
 .glass-border {
@@ -19,12 +20,16 @@ body {
 }
 
 t1 {
-    font-size: 2rem;
+    font-size: 32px;
     color: #ffffff;
 }
 
 p {
     line-height: 24px;
+}
+
+b {
+    font-weight: 900;
 }
 
 #container {
@@ -59,19 +64,16 @@ p {
     height: calc(100% - 50px);
     width: 80%;
     margin-right: 25px;
+    background-color: #00000088;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
 }
 
 #input-button {
     height: calc(100% - 50px);
     width: 20%;
-}
-
-input {
-    background-color: #00000088;
-    color: #ffffff;
-    text-align: center;
-    font-size: 1.3rem;
-    
+    font-size: 20px;
 }
 
 input:focus {

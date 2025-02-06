@@ -6,3 +6,7 @@ const pages = [
 ]
 
 document.getElementById("poem").innerHTML = pages[0];
+
+function buttonClicked() {
+    document.getElementById("input-button").innerHTML = "Test";
+}
