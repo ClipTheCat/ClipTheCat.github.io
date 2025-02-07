@@ -32,7 +32,13 @@ b {
     font-weight: 900;
 }
 
-#container {
+#page-number-container {
+    position: sticky;
+    top: 20px;
+    margin-left: 20px;
+}
+
+#main-container {
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -56,14 +62,15 @@ b {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 25px;
     padding: 0 25px 0 25px;
     background-color: #ffffff11;
 }
 
 #input-field {
-    height: calc(100% - 50px);
     width: 80%;
-    margin-right: 25px;
+    height: calc(100% - 50px);
+    box-sizing: border-box;
     background-color: #00000088;
     color: #ffffff;
     text-align: center;
