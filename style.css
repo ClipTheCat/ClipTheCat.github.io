@@ -8,7 +8,7 @@ body {
 
 .glass-border {
     border-radius: 10px;
-    border: #ffffff22;
+    border: #222222;
     border-width: 2px;
     border-style: solid;
 }
@@ -70,26 +70,34 @@ b {
     font-size: 20px;
 }
 
-#input-button {
-    height: calc(100% - 50px);
-    width: 20%;
-    font-size: 20px;
-    transition: 1000ms;
-}
-
-input:focus {
+#input-field:focus {
     outline: none;
     border: #3570a1;
     border-radius: 10px;
     border-width: 2px;
     border-style: solid;
-    transition-duration: 500ms;
+    transition-duration: 200ms;
 }
 
+#input-field:focus::placeholder {
+    color: transparent;
+    transition: 200ms;
+}
+
+#input-button {
+    height: calc(100% - 50px);
+    width: 20%;
+    font-size: 20px;
+    transition: 200ms;
+}
+
+#input-button:hover {
+    background-color: #cccccc;
+}
 .flash-red {
-    background-color: #ff3a3a;
+    background-color: #ff4444 !important;
 }
 
 .flash-green {
-    background-color: #29ff29;
+    background-color: #5cff5c !important;
 }

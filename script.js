@@ -10,33 +10,40 @@ const answers = [
     "c"
 ]
 
-var currentPage = 0;
+// Retrieve the page the user left at, if one exists
+var currentPage = localStorage.getItem("currentPage") != null ? localStorage.getItem("currentPage") : 0;
 
-var flashTime = 800;
+var flashTime = 600;
 
 var buttonAllowed = true;
 
 var inputElement = document.getElementById("input-field");
 var inputButton = document.getElementById("input-button");
 
-document.getElementById("poem").innerHTML = pages[currentPage];
+goToPage(currentPage);
 
-function nextPage() {
-    currentPage++;
+function goToPage(page) {
+    if (page >= 3 || page < 0) {
+        currentPage = 0;
+    } else {
+        currentPage = page;
+    }
+
     inputElement.value = "";
-    document.getElementById("poem").innerHTML = pages[currentPage];
+    document.getElementById("poem").innerHTML = pages[currentPage] != undefined ? pages[currentPage] : "Whoops the text that's supposed to be here is missing!";
+    console.log("Current page: " + currentPage);
     window.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth"
     });
+    window.localStorage.setItem("currentPage", currentPage);
 }
 
 function buttonClicked() {
     if (!buttonAllowed) {
         return;
     }
-    buttonAllowed = false;
 
     var inputText = inputElement.value.toLowerCase();
     
@@ -46,9 +53,15 @@ function buttonClicked() {
         buttonAllowed = true;
     }, flashTime);
 
-    if (inputText == answers[currentPage]) {
-        setTimeout(nextPage, flashTime)
+    console.log(inputText);
+
+    if (inputText == "reset") {
+        setTimeout(goToPage(0), flashTime);
+        isCorrect = false;
+    } else if (inputText == answers[currentPage] || inputText == "adminkey") {
+        setTimeout(goToPage(currentPage + 1), flashTime);
         isCorrect = true;
+        buttonAllowed = false;
     } else {
         isCorrect = false;
     }
@@ -67,5 +80,5 @@ function flashInput(isCorrect) {
     inputButton.classList.add(styleClassName);
     setTimeout(() => {
         inputButton.classList.remove(styleClassName);
-    }, flashTime / 2)
+    }, flashTime - 300)
 }
