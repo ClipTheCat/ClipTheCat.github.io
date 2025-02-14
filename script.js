@@ -25,7 +25,6 @@ var inputField = document.getElementById("input-field");
 var inputButton = document.getElementById("input-button");
 var poemDisplay = document.getElementById("poem");
 var pageNumberDisplay = document.getElementById("page-number");
-var inputContainer = document.getElementById("input-container");
 
 inputField.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
