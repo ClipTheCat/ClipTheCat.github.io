@@ -78,18 +78,21 @@ function buttonClicked() {
     
     var isCorrect;
 
-    console.log("--------------------------------\nInput: \"" + inputText + "\"");
+    console.log("--------------------------------");
+    console.log("Input: \"" + inputText + "\"");
 
     if (currentPage == 3) {
 
         var toPage = Number(inputText);
+        if (toPage == NaN) {
+            toPage = 0;
+        }
+        inputText = "";
         isCorrect = true;
         buttonAllowed = false;
         console.log("Switching from last page to page: " + toPage);
         console.log(inputText);
-        setTimeout(() => { goToPage(toPage) }, flashTime);
-        inputText = "";
-        
+        setTimeout(() => { goToPage(toPage) }, flashTime);       
 
     } else if (inputText == "reset") {
 
