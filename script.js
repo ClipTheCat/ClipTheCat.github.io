@@ -1,7 +1,13 @@
 var body = document.body;
 var title = document.getElementById("title");
 
-window.onscroll = function() {
+function translateTitle() {
     let transformY = Math.min(this.scrollY / 2, 400);
     title.style.transform = `translateY(-${transformY}px)`;
+}
+
+translateTitle();
+
+window.onscroll = () => {
+    translateTitle();
 }
