@@ -25,6 +25,10 @@ body {
     color: white;
 }
 
+.no-link-format {
+    text-decoration: none;
+}
+
 t1, t2, t3, p, a {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -36,14 +40,17 @@ t1, t2, t3, p, a {
 t1 {
     font-size: 100px;
     color: white;
+    text-decoration: none;
 }
 
 t2 {
     font-size: 32px;
+    text-decoration: none;
 }
 
 t3 {
     font-size: 24px;
+    text-decoration: none;
 }
 
 p, a {
@@ -52,8 +59,9 @@ p, a {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: 400;
+    
 }
 
 .section {
@@ -155,21 +163,31 @@ a {
 }
 
 .presentation-text {
-    margin-left: 5vw;
-    width: 60vw;
+    box-sizing: border-box;
+    padding-left: 5vw;
+    margin: 0;
+    width: 70vw;
 }
 
-.presentation-text p {
+.presentation-text t2 {
+    box-sizing: border-box;
+    padding: 10px;
+    border-left: 3px solid #bbb;
+    border-radius: 10px;
+    box-shadow: -15px 0 10px -11px rgba(0, 0, 0, 0.2);
+}
+
+.presentation-text p, img {
     margin-left: 3vw;
     box-sizing: border-box;
     padding-left: 30px;
-    border-left: 3px solid #bbb;
-    border-radius: 10px;
 }
-
 .presentation-side {
+    width: 28vw;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: 30px;
+    align-items: center;
 }
