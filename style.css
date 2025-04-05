@@ -35,6 +35,7 @@ t1, t2, t3, p, a {
 
 t1 {
     font-size: 100px;
+    color: white;
 }
 
 t2 {
@@ -70,6 +71,13 @@ a {
     align-items: center;
     flex-direction: column;
     box-shadow: 0 0 20px rgba(0, 0, 25, 0.1);
+}
+
+.header t3 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: white;
 }
 
 .secondary-header {
@@ -141,11 +149,27 @@ a {
     flex-direction: column;
 }
 
-.presentation-inner {
+.presentation-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.presentation-text {
     margin-left: 5vw;
     width: 60vw;
 }
 
-.presentation-inner p {
+.presentation-text p {
     margin-left: 3vw;
+    box-sizing: border-box;
+    padding-left: 30px;
+    border-left: 3px solid #bbb;
+    border-radius: 10px;
+}
+
+.presentation-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 30px;
 }
